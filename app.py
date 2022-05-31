@@ -3,6 +3,13 @@ from logging import exception
 from os.path import exists
 import json
 
+# to add a log operation/query is sufficient to:
+# add a new command line argument, ex: argParser.add_argument('--mynewquery', action='store_true')
+# add a new logAction in the action array. you must provide:
+# the previously added argument parsed (to enable or disable the action) plus any other condition combined
+# the key that will appear on the json
+# a delegate for querying the value. the delegate must accepts a list of LogEntry and output a value
+
 #exceptions
 class MalformedLog(Exception):
     pass
